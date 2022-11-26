@@ -1,8 +1,36 @@
 import React,{useEffect, useState} from 'react'
 import tw from 'tailwind-styled-components'
-import { carList } from '../data/carList'
+// import { carList } from '../data/carList'
 const RideSelector = ({pickupCoordinates,dropoffCoordinates}) => {
     const [rideDuration, setRideDuration]=useState()
+    const carList = [
+        {
+          imgUrl: 'https://i.ibb.co/cyvcpfF/uberx.png',
+          service: 'UberX',
+          multiplier: 1,
+        },
+        {
+          imgUrl: 'https://i.ibb.co/YDYMKny/uberxl.png',
+          service: 'UberXL',
+          multiplier: 1.5,
+        },
+        {
+          imgUrl: 'https://i.ibb.co/Xx4G91m/uberblack.png',
+          service: 'Black',
+          multiplier: 2,
+        },
+        {
+          imgUrl: 'https://i.ibb.co/cyvcpfF/uberx.png',
+          service: 'Comfort',
+          multiplier: 1.2,
+        },
+        {
+          imgUrl: ' https://i.ibb.co/1nStPWT/uberblacksuv.png',
+          service: 'Black SUV',
+          multiplier: 2.8,
+        }
+      ]
+      
     // ride durartion from mapbox
     useEffect(()=>{
         fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]},${pickupCoordinates[1]};${dropoffCoordinates[0]},${dropoffCoordinates[1]}?access_token=pk.eyJ1IjoiemFyazI4IiwiYSI6ImNrdm4zd2xzdDdpNHcydXF3Z2Y5NGhpdnUifQ.LW87zXss3Dq8Czo03nlAhQ`)

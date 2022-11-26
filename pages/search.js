@@ -8,7 +8,7 @@ const [dropoff, setDropoff]=useState()
     return (
         <Wrapper>
             <ButtonContainer>
-                <Link href="/">
+                <Link passHref href="/">
                 <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png"/>
                 </Link>
             </ButtonContainer>
@@ -36,7 +36,7 @@ const [dropoff, setDropoff]=useState()
                 <StarIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"/>
                 Saved Places
             </SavedPlaces>
-            <Link href={{
+            <Link passHref href={{
                 pathname:"/confirm",
                 query:{
                     pickup:pickup,
