@@ -9,7 +9,7 @@ const RideSelector = ({pickupCoordinates,dropoffCoordinates}) => {
         .then(res => res.json())
         .then(data=>{
             console.log(data)
-            setRideDuration(data.routes[0].duration/100)
+            setRideDuration(data.routes[0]?.duration/100)
         } )
     },[pickupCoordinates,dropoffCoordinates])
     return (
@@ -21,7 +21,7 @@ const RideSelector = ({pickupCoordinates,dropoffCoordinates}) => {
                     <CarImage src={car.imgUrl}/>
                     <CarDetails>
                         <Service>{car.service}</Service>
-                        <Time>{`${(rideDuration.toFixed(0))}min`}</Time>
+                        <Time>{`${(rideDuration?.toFixed(0))}min`}</Time>
                     </CarDetails>                 
                 <Price>{`$${(rideDuration*car.multiplier).toFixed(2)}`}</Price>
                 </Car>
