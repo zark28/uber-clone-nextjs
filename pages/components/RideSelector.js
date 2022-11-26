@@ -16,7 +16,7 @@ const RideSelector = ({pickupCoordinates,dropoffCoordinates}) => {
         <Wrapper>
             <Title>Choose a ride, or swipe up for more</Title>
             <CarList>
-                {carList.map((car,index)=>(
+                {carList?.map((car,index)=>(
                     <Car key={index}>
                     <CarImage src={car.imgUrl}/>
                     <CarDetails>
